@@ -112,18 +112,19 @@ void loop() {
       analogWrite(motorkiriB2, LOW);
       Serial.println("Motor BERHENTI");
     }
+      //kod kiri dan kanan telah dibetulkan
     else if (dat == 'L') { // KIRI (Sweep Turn)
-      analogWrite(motorkananA1, vSpeed);
-      analogWrite(motorkananA2, LOW);
-      analogWrite(motorkiriB1, LOW);
-      analogWrite(motorkiriB2, LOW);
-      Serial.println("Motor Pusing ke KIRI");
-    }
-    else if (dat == 'R') { // KANAN (Sweep Turn)
       analogWrite(motorkananA1, LOW);
       analogWrite(motorkananA2, LOW);
       analogWrite(motorkiriB1, LOW);
       analogWrite(motorkiriB2, vSpeed);
+      Serial.println("Motor Pusing ke KIRI");
+    }
+    else if (dat == 'R') { // KANAN (Sweep Turn)
+      analogWrite(motorkananA1, vSpeed);
+      analogWrite(motorkananA2, LOW);
+      analogWrite(motorkiriB1, LOW);
+      analogWrite(motorkiriB2, LOW);
       Serial.println("Motor Pusing ke KANAN");
     }
   }
